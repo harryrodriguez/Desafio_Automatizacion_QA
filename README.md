@@ -26,7 +26,7 @@ Realice el siguiente flujo utilizando Selenium con el lenguaje de programación 
 # Punto Extra
 * "Comprar un monitor Apple Cinema 30'' con las siguientes opciones disponibles:
   - Radio = Large (+30.00)
-  - Checkbox múltiple = 2 (+20.00) y 4 (+40.00)
+  - Checkbox  multiple = 2 (+20.00) y 4 (+40.00)
   - Texto = Test_1
   - Select = Yellow (+2.00)
   - TextArea = Data de prueba
@@ -46,60 +46,5 @@ Realice el siguiente flujo utilizando Selenium con el lenguaje de programación 
 * Detalle Flujo
 * Debe ser enviada vía un pull request a este repositorio [Desafío Automatización](https://github.com/Previred-QA/Desarfio_Automatizacion_QA)
 * En el detalle del commit debes indicar los siguientes datos (Nombre Completo y Correo Electrónico)
-
-# Documentacion complementaria :
-
-# Entorno de desarrollo / Pre-requisitos
-
-* LENGUAJE DE PROGRAMACION : JAVA + SELENIUM + CUCUMBER
-
-* COMPONENTES: JDK – JVM – JRE 
-
-* IDE: Visual Studio Code / Intellij
-
-* WEB DRIVER: CHROMEDRIVER
-
-* GESTIÓN DE DEPENDENCIAS: GRADLE (Building Tools)
-
-* EXTENSIONES: 
-
-•	GRADLE LANGUAGE SUPPORT
-•	GRADLE TASKS
-•	Cucumber (Gherkin) Full Support
-•	Snippets and Syntax Highlight for Gherkin (Cucumber)
-
-* VARIABLES DE ENTORNO: 
-
-•	GRADLE_HOME = C:\gradle
-•	JAVA_HOME = C:\Program Files\Java\jdk-15.0.2
-
-PATH:
-
-•	C:\gradle\bin
-•	%JAVA_HOME%\bin
-•	C:\chromedriver
-
-# Estructura del proyecto:
-
-/dataTest : Archivo externo para lectura de creacion de cuenta e imagen para upload en punto extra.
-/Documentacion complementaria : Video de muestra de la ejecucion de la prueba.
-src/test/java: Lógica y código donde se encuentra las clases de páginas, definición de pasos y configuracion de runner.
-src/test/resources: features 
-test-ouput/HtmlReport : Informe de ejecucion de features y sus scenarios
-test-ouput/LoggerReport : Log de ejecucion de pruebas
-test-ouput/Screenshots_test : Evidencias de capturas de pasos.
-
-# Instrucciones de ejecucion 
-
-comando : gradle clean / gradle build via TERMINAL.
-
-# Detalle del flujo
-
-Mediante el lenguaje java y la integración de selenium, se realizan pruebas sobre portal openabstracta donde se valida a nivel front funcionalidades básicas asociadas al enfoque que tiene el sitio, para lo anterior se utiliza un lenguaje de programacion orientado a objetos realizando modularización y validaciones de los ingresos a través de funciones que provee el framework.
-
-
-
-
-
 
 
