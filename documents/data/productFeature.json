@@ -1,0 +1,14 @@
+{
+  "radio": "Large",
+  "checkbox1": "Checkbox 2",
+  "checkbox2": "Checkbox 4",
+  "text": "Test_1",
+  "select": "Yellow (+2.00)",
+  "textArea": "Data de prueba",
+  "file": "documents/images/hola.png",
+  "date": "2022-01-26",
+  "time": "17:25",
+  "dateTime": "2021-12-24 23:55",
+  "qty": "2"
+
+}

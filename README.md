@@ -1,50 +1,123 @@
-# Desafío_Automatización_QA
-
-Realice el siguiente flujo utilizando Selenium con el lenguaje de programación que prefiera.
-
-* Ingresar a [opencart.abstracta.us](http://opencart.abstracta.us/index.php?route=common/home)
-* Añadir al carro de compras un Ipod Classic
-* Añadir al carro de compras un Imac
-* Proceder a realizar la compra
-* Realizar login con credenciales obtenidas de un archivo externo a elección (Basta que sea un email con estructura válida y contraseña)
-* Crear una cuenta
-* Continuar con la compra y llegar a la orden completa
-* Visitar el historial de órdenes y validar resumen de orden 
-* Cerrar sesión
-
-# Validaciones Mínimas
-* Tomar evidencia de cada producto añadido al carro
-* Validar que los artículos en el carro sean Ipod Classic y Imac
-* Evidencia de creación de la cuenta
-* Evidencia de paso a paso del checkout
-* Validar que despacho y costo sea = Flat Shipping Rate - $5.00
-* Evidencia de costo final de la orden
-* Evidencia de orden completa
-* Evidencia de apartado "Order History" y validar que el estado de la compra se encuentre en estado "Pending"
-* Validar datos de dirección de pago v/s los ingresados al crear la cuenta
-
-# Punto Extra
-* "Comprar un monitor Apple Cinema 30'' con las siguientes opciones disponibles:
-  - Radio = Large (+30.00)
-  - Checkbox  multiple = 2 (+20.00) y 4 (+40.00)
-  - Texto = Test_1
-  - Select = Yellow (+2.00)
-  - TextArea = Data de prueba
-  - Archivo = Subir archivo .jpg o .png a elección
-  - Fecha = Calendario -> 2022-01-26
-  - Tiempo = Reloj -> 17:25
-  - Fecha y reloj = Calendario y reloj -> 2021-12-24 23:55
-  - Cantidad = 2"
-* Se ponderará la cantidad de valores ingresados en duro y la documentación del código.
-
-# Entregables
-* Archivo de entrada de data para la ejecución de la automatización
-* Archivo/s de salida (Reporte, log, evidencias tomadas)
-* La solución debe contener un README.md con la documentación de la automatización.
-* Pre-requisitos
-* Instrucciones para ejecutar
-* Detalle Flujo
-* Debe ser enviada vía un pull request a este repositorio [Desafío Automatización](https://github.com/Previred-QA/Desarfio_Automatizacion_QA)
-* En el detalle del commit debes indicar los siguientes datos (Nombre Completo y Correo Electrónico)
+Desafio Practico QA Automatizador PreviRed
+=
 
 
+First steps:
+-
+-------------
+
+- [Installation](documents/info/Installation.md)
+- [Base Page Class](documents/info/bp_creations.md)
+- [Utils classes](documents/info/utilsCreation.md)
+- [Driver class](documents/info/driverCreation.md)
+- [Steps](documents/info/steps.md)
+
+---------------
+
+Create a feature:
+-
+- Create a file with extension `.feature` under the folder features
+- You can start creating your feature looking at `features/testPrevired.feature` as example
+-----------------
+Create step class:
+-
+- Create a java class under the package steps. 
+- This class will contain all the method thar connect the feature files with the page class
+- You can start looking at `steps/TestPreviredSteps.java` as example
+
+---------------------
+Create page class:
+-
+- Create a java class under the package pages.
+- this class will contain all the elements declared and methods that make the actions needed for automatization
+- You can start looking at `pages/TestPreviredPage.java` as example
+-------------------
+
+Create Runner class:
+- 
+- Create a package under `src/test/java` called runner
+- this package will contain the runner class, that allow us to run the test we want
+- Inside the package runner, create a java class named `Runner` and copy the following:
+
+
+    import com.vimalselvam.cucumber.listener.Reporter;
+    import cucumber.api.CucumberOptions;
+    import cucumber.api.junit.Cucumber;
+    import org.junit.AfterClass;
+    import org.junit.runner.RunWith;
+    
+    @RunWith(Cucumber.class)
+    @CucumberOptions
+    (       glue = { "driver","steps" }, features = "src/test/resources/features/",
+    plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-report/report.html"},
+    tags = "@test2"
+    )
+    
+    public class Runner {
+    @AfterClass
+    public static void writeExtentReport() {
+    
+            Reporter.loadXMLConfig("documents/extent-config.xml");
+        }
+    }
+
+- glue: select driver and steps forder
+- feature: the path where the files .features are
+- tags: this will change depending wich test you want to run. the tag comes from the feature
+
+
+- Under the folder documents, create a file `extent-config.xml` and add the path inside reporter in writeExtentReport method.
+- Inside the file `extent-config.xml` paste the following:
+
+
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <extentreports>
+        <configuration>
+            <!-- report theme --> <!-- standard, dark -->
+            <theme>standard</theme>
+    
+            <!-- document encoding -->  <!-- defaults to UTF-8 -->
+            <encoding>UTF-8</encoding>
+    
+            <!-- protocol for script and stylesheets -->   <!-- defaults to https -->
+            <protocol>https</protocol>
+    
+            <!-- title of the document -->
+            <documentTitle>ToolsQA - Cucumber Framework</documentTitle>
+    
+            <!-- report name - displayed at top-nav -->
+            <reportName>ToolsQA - Cucumber Report</reportName>
+    
+            <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
+            <dateFormat>yyyy-MM-dd</dateFormat>
+    
+            <!-- global time format override -->   <!-- defaults to HH:mm:ss -->
+            <timeFormat>HH:mm:ss</timeFormat>
+    
+            <!-- custom javascript -->
+            <scripts>
+                <![CDATA[
+            $(document).ready(function() {
+    
+            });
+          ]]>
+            </scripts>
+    
+            <!-- custom styles -->
+            <styles>
+                <![CDATA[
+    
+          ]]>
+            </styles>
+        </configuration>
+    </extentreports>
+
+
+
+Run scenarios:
+- 
+
+- Go to runner class and change the `tags` for the specific scenario you want to run
+or the tag that contains all the scenarios.
+- Then, right Click and "Run"

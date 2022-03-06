@@ -1,0 +1,14 @@
+{
+      "first_name":"juan",
+      "last_name":"perez",
+      "email": "josepz@gmail.com",
+      "phone": "949494949",
+      "password":"qazxsw1234",
+      "password_confirm":"qazxsw1234",
+      "address": "los rosales 1234",
+      "city": "quilpue",
+      "post_code": "2330000",
+      "country": "Chile",
+      "region": "Valparaiso"
+
+ }
