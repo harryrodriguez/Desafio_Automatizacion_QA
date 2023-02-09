@@ -44,7 +44,7 @@ Realice el siguiente flujo utilizando Selenium con el lenguaje de programación 
 * Pre-requisitos
 * Instrucciones para ejecutar
 * Detalle Flujo
-* Debe ser enviada vía un pull request a este repositorio [Desafío Automatización](https://github.com/Previred-QA/Desarfio_Automatizacion_QA)
+* Debe ser enviada vía un pull request a este repositorio [Desafío Automatización](https://github.com/Previred-QA/Desafio_Automatizacion_QA)
 * En el detalle del commit debes indicar los siguientes datos (Nombre Completo y Correo Electrónico)
 
 
