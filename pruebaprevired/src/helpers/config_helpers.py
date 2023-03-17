@@ -9,4 +9,4 @@ def get_base_url():
     elif env.lower() == 'prod':
         return '' # Aqui url de produccion
     else:
-        raise Exception(f"Unknown environment: {env}")
+        raise Exception(f"Entorno de trabajo desconocido {env}")

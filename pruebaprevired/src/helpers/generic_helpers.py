@@ -1,5 +1,7 @@
 import os
-from datetime import date
+import logging as logger
+import random
+import string
 
 
 class GenericHelpers:
@@ -19,3 +21,24 @@ class GenericHelpers:
             self.driver.save_screenshot(file_path)
             # Devolver el nombre completo de la captura de pantalla
             return file_path
+
+    def generate_random_email_and_password(self, domain=None, email_prefix=None):
+
+        if not domain:
+            domain = 'prev.com'
+        if not email_prefix:
+            email_prefix = 'test-user'
+
+        random_email_string_length = 10
+        random_string = ''.join(random.choices(string.ascii_lowercase, k=random_email_string_length))
+
+        email = email_prefix + '_' + random_string + '@' + domain
+
+        logger.info(f"Se genero email ramdom {email}")
+
+        rand_psswd_length = 20
+        rand_password = ''.join(random.choices(string.ascii_letters, k=rand_psswd_length))
+
+        random_info = {"email": email, "password": rand_password}
+
+        return random_info

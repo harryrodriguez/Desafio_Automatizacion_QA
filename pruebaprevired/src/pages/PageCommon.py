@@ -14,7 +14,7 @@ class PageCommon(PageCommonLocators):
     def __init__(self, driver):
         self.driver = driver
         self.sl = SeleniumExtended(self.driver)
-        generic_helpers = GenericHelpers(self.driver)
+
 
     def go_to_my_homepage(self):
         base_url = get_base_url()
@@ -32,10 +32,9 @@ class PageCommon(PageCommonLocators):
             self.sl.wait_and_click(self.BTN_SEARCH)
             item_web = self.sl.find_element(self.TEXT_ITEM_SEARCH)
             item_text_web = item_web.text
-            print(f"El item buscado es {item} y el item de la busqueda es {item_text_web}")
             if item == item_text_web:
-                print('entre al if')
                 self.sl.wait_and_click(self.BTN_ADD_CARD)
+                logger.info(f"El item {item} fue")
                 sleep(3)
                 alert = self.sl.find_element(self.ALERT_SUCCESS_ADD_ITEM)
                 alert_text = alert.text
@@ -46,25 +45,33 @@ class PageCommon(PageCommonLocators):
                 #import pdb;pdb.set_trace()
                 if text_success_expected in text_success_expected:
                     print('entre al if evidencia')
+                    logger.info(f"El item {item} fue agregregado con éxito ")
                     #tomo evidencia del mensaje que me dice que se agrego al carrito
-                    generic_helpers.save_screenshot('Evidencias', f'Evidencia_{item}_agregado')
+                    generic_helpers.save_screenshot('Evidencias\\Items Agregados', f'Evidencia_{item}_agregado')
+                    logger.info(f"Se toma evidencia de la alerta del item {item}")
                 else:
                     print('El item no se añadio al carrito')
 
-    def verify_item_in_preview_card(self , search_items):
+    def verify_item_in_preview_card(self, search_items):
         generic_helpers = GenericHelpers(self.driver)
+        logger.info("Comienzo la validacion de los item agregados al carrito")
         self.sl.wait_and_click(self.BTN_PREVIEW_CARD)
         items_add_preview_card = self.sl.find_elements(self.ITEM_PREVIEW_CARD)
-        print(items_add_preview_card)
         for item in items_add_preview_card:
             text_item = item.text
             if text_item in search_items:
-                print(f"El item {text_item} está en la lista de items.")
+                logger.info(f"El item {text_item} está en la lista de items.")
             else:
-                print(f"El item {text_item} no está en la lista de items.")
-            generic_helpers.save_screenshot('Evidencias', f'Evidencia_previsualizacion_items_agregados')
+                logger.info(f"El item {text_item} no está en la lista de items.")
+
+        generic_helpers.save_screenshot('Evidencias\\Items Agregados', 'Evidencia_previsualizacion_items_agregados_en_carrito')
+        logger.info("tomo evidecias de los items agregados")
 
 
+
+    def click_btn_checkout_preview_card(self):
+        self.sl.wait_and_click(self.BTN_CHECKOUT_PREVIEW_CARD)
+        logger.info("Doy click al boton checkout")
 
 
 

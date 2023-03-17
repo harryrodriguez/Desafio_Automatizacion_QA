@@ -9,3 +9,4 @@ class PageCommonLocators:
     ALERT_SUCCESS_ADD_ITEM = (By.CSS_SELECTOR , 'div.alert-success')
     BTN_PREVIEW_CARD = (By.CSS_SELECTOR, 'div.btn-group button.btn-inverse')
     ITEM_PREVIEW_CARD = (By.CSS_SELECTOR , 'table.table-striped tr td.text-left')
+    BTN_CHECKOUT_PREVIEW_CARD = (By.CSS_SELECTOR, 'div p.text-right a i.fa-share')
