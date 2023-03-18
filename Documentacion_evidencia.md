@@ -21,7 +21,7 @@ Las Imagenes se deben mostrar en la carpeta `Evidencias` que a su vez tiene subc
        -  ![Evidencia Paso 4 CheakOut](https://github.com/Niccolle/Desafio_Automatizacion_QA/blob/main/Imagenes/Paso4_flat_shipping_rate.png)
        -  ![Evidencia Paso 5 CheakOut](https://github.com/Niccolle/Desafio_Automatizacion_QA/blob/main/Imagenes/Paso5_payment_methond.png)
        -  ![Evidencia Paso 6 CheakOut](https://github.com/Niccolle/Desafio_Automatizacion_QA/blob/main/Imagenes/Paso6_confirm_order.png)
-       -  ![Evidencia Paso 7 CheakOut!](https://github.com/Niccolle/Desafio_Automatizacion_QA/blob/main/Imagenes/Paso7_mgs_order_success.png)
+       -  ![Evidencia Paso 7 CheakOut!](https://github.com/Niccolle/Desafio_Automatizacion_QA/blob/main/Imagenes/Paso7_mensaje_order_success.png)
  
   - `Orden Completa:` Contiene 1 imagen de Evidencia de la Orden completa
        -  ![Evidencia Orden Completa!](https://github.com/Niccolle/Desafio_Automatizacion_QA/blob/main/Imagenes/confirm_order.png)
