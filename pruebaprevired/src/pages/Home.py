@@ -12,4 +12,4 @@ class Home(HomeLocators):
     def click_my_account_and_order_history(self):
         self.sl.wait_and_click(self.ELEMENTS_MY_ACCOUNT)
         self.sl.wait_and_click(self.ELEMENT_ORDER_HISTORY)
-        logger.info("Doy click en Mi cuenta y luego en historial de orden")
+        logger.info("Home -- Click en mi cuenta y luego en historial de orden")

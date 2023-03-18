@@ -27,4 +27,4 @@ def init_driver(request):
 def setup_logging():
     logging.config.fileConfig('logging.ini')
     logger = logging.getLogger(__name__)
-    logger.info('Logging configured')
+    logger.info('Logging Configurado')

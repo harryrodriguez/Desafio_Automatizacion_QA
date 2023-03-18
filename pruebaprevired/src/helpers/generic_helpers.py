@@ -1,3 +1,4 @@
+from datetime import datetime
 import os
 import logging as logger
 import random
@@ -16,7 +17,8 @@ class GenericHelpers:
                 os.makedirs(path_name)
 
             # Tomar la captura de pantalla y guardarla en la carpeta especificada
-            file_name = screenshot_name + ".png"
+            timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+            file_name = f"{screenshot_name}_{timestamp}.png"
             file_path = os.path.join(path_name, file_name)
             self.driver.save_screenshot(file_path)
             # Devolver el nombre completo de la captura de pantalla
@@ -34,7 +36,7 @@ class GenericHelpers:
 
         email = email_prefix + '_' + random_string + '@' + domain
 
-        logger.info(f"Se genero email ramdom {email}")
+        logger.info(f"Se genero email random {email}")
 
         rand_psswd_length = 20
         rand_password = ''.join(random.choices(string.ascii_letters, k=rand_psswd_length))
