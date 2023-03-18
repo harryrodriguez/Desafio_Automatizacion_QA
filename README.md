@@ -91,6 +91,8 @@ Las siguientes validaciones mínimas se han incluido en la solución de automati
   - Ejecuta el comando 
   ```shell
      pytest -m <nombre de la marca> (en este caso es test_001) -s
+     ejemplo: 
+      pytest -m test_001 -s
   ```
    Para ejecutar el test automatizado. Asegúrate de reemplazar `<nombre de la marca>` con el nombre de la marca que hayas utilizado en tu archivo de prueba para identificar los casos de prueba específicos que deseas ejecutar. El argumento `-s` le permite a pytest mostrar la salida de los logs de la consola.
 

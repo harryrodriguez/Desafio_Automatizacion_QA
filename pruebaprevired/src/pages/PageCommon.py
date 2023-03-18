@@ -36,10 +36,7 @@ class PageCommon(PageCommonLocators):
                 sleep(3)
                 alert = self.sl.find_element(self.ALERT_SUCCESS_ADD_ITEM)
                 alert_text = alert.text
-                print(alert_text)
                 text_success_expected = 'Success: You have added'
-                print(alert_text)
-                print(text_success_expected)
                 #import pdb;pdb.set_trace()
                 if text_success_expected in alert_text:
                     generic_helpers.save_screenshot('Evidencias\\Items Agregados', f'Evidencia_{item_name}_agregado')

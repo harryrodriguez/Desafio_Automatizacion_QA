@@ -18,13 +18,9 @@ class TestCreateAddBuy:
 
     @pytest.mark.test_001
     def test_complete_shopping_flow(self):
-        import os
-        print(os.getcwd())
-
         with open('datos_items_busqueda.csv', newline='', encoding='utf-8-sig') as csvfile:
             reader = csv.DictReader(csvfile)
             items = [row['item'] for row in reader]
-            print(items)
         page_common = PageCommon(self.driver)
         checkout = Checkout(self.driver)
         home = Home(self.driver)

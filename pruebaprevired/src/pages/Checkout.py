@@ -1,3 +1,5 @@
+from time import sleep
+
 from pruebaprevired.src.pages.locators.CheckoutLocators import CheackoutLocators
 from pruebaprevired.src.SeleniumExtended import SeleniumExtended
 from pruebaprevired.src.helpers.generic_helpers import GenericHelpers
@@ -159,6 +161,7 @@ class Checkout(CheackoutLocators):
     def click_confirm_orden(self):
         generic_helpers = GenericHelpers(self.driver)
         self.sl.wait_and_click(self.BTN_CONFIRM_ORDER)
+        sleep(3)
         generic_helpers.save_screenshot('Evidencias\\Paso a Paso Cheackout', 'Paso7_mgs_order_success')
         logger.info("Checkout -- Toma de Evidencia de paso a paso de cheakout paso 7 (ver la evidencia en la ruta Evidencias\\Paso a Paso Cheackout)")
         self.sl.wait_and_click(self.BTN_CONTINUE_SUCCESS_ORDER)
