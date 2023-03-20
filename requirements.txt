@@ -1,5 +1,0 @@
-python = 3.10.8
-pytest = 7.2.1
-selenium = 4.5.0
-Faker = 17.6.0
-python-dotenv
